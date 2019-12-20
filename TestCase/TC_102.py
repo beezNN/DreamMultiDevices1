@@ -4,7 +4,8 @@ __author__ = "无声"
 import unittest
 from tools import  Screencap
 from airtest.core.api import *
-from poco.drivers.unity3d import UnityPoco
+from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 
 _print = print
 def print(*args, **kwargs):
@@ -27,7 +28,7 @@ def Main(devices):
             u'''用例test_01_of_102的操作步骤'''
             # 每个函数里分别实例poco，否则容易出现pocoserver无限重启的情况
             print("我是TC102的test_01_of_102方法")
-            poco = UnityPoco()
+            poco = AndroidUiautomationPoco()
             time.sleep(20)
             t = 1
             self.assertEquals(1, t)
@@ -36,7 +37,7 @@ def Main(devices):
             u'''用例test_02_of_102的操作步骤'''
             #每个函数里分别实例poco，否则容易出现pocoserver无限重启的情况
             print("我是TC102的test_02_of_102方法")
-            poco = UnityPoco()
+            poco = AndroidUiautomationPoco()
             Screencap.GetScreen(time.time(), devices, "test_02_of_102的描述")
             t = 1
             self.assertEquals(2, t)

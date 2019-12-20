@@ -7,14 +7,14 @@
         $("#functionReport").show()
         $("#performanceReport").hide()
     }
-    
+
     function showPerformance(obj) {
         $(".disableReport").removeClass("disableReport")
         $(obj).addClass("disableReport")
         $("#functionReport").hide()
         $("#performanceReport").show()
     }
-    
+
     $(document).ready(function() {
 
         var commonTitle = {
@@ -25,7 +25,7 @@
             align: 'center',
             verticalAlign: 'bottom',
         };
-    
+
         var cpuData = {
             title: commonTitle,
             xAxis: {
@@ -46,7 +46,7 @@
                             $("#CpuScreen").html(htmlStr);
                         },
                     },
-                }, 
+                },
                 {
                     name: 'CPU占比',
                     data: AllocatedCPU["AllocatedCPU"],
@@ -57,11 +57,11 @@
                             $("#CpuScreen").html(htmlStr);
                         },
                     },
-                }, 
+                },
             ],
         };
         $('#CpuChart').highcharts(cpuData);
-        
+
         var memeryData = {
             title: commonTitle,
             xAxis: {
@@ -82,7 +82,7 @@
                             $("#MemeryScreen").html(htmlStr);
                         },
                     },
-                }, 
+                },
                 {
                     name: '使用内存',
                     data: UsedMemory["UsedMemory(MB)"],
@@ -93,7 +93,7 @@
                             $("#MemeryScreen").html(htmlStr);
                         },
                     },
-                }, 
+                },
                 {
                     name: '空闲内存',
                     data: FreeMemory["FreeMemory(MB)"],
@@ -104,7 +104,7 @@
                             $("#MemeryScreen").html(htmlStr);
                         },
                     },
-                }, 
+                },
             ],
         };
         $('#MemeryChart').highcharts(memeryData);
@@ -174,4 +174,5 @@
    }
 
     });
+
 </script>
